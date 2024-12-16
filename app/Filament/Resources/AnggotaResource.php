@@ -56,7 +56,7 @@ class AnggotaResource extends Resource
 
                 TextColumn::make('email'),
 
-                TextColumn::make('no_telpon')
+                TextColumn::make('no_telepon')
                     ->numeric(),
 
                 TextColumn::make('alamat'),

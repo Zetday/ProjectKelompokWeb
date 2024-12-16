@@ -61,7 +61,7 @@ class PeminjamanResource extends Resource
                         'Dikembalikan' => 'Dikembalikan',
                     ])
                     ->native(false)
-                    ->required()
+                    ->required(),
             ]);
     }
 

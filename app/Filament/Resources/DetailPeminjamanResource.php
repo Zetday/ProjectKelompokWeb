@@ -2,16 +2,19 @@
 
 namespace App\Filament\Resources;
 
-use App\Filament\Resources\DetailPeminjamanResource\Pages;
-use App\Filament\Resources\DetailPeminjamanResource\RelationManagers;
-use App\Models\DetailPeminjaman;
 use Filament\Forms;
-use Filament\Forms\Form;
-use Filament\Resources\Resource;
 use Filament\Tables;
+use Filament\Forms\Form;
 use Filament\Tables\Table;
+use App\Models\DetailPeminjaman;
+use Filament\Resources\Resource;
+use Filament\Forms\Components\Select;
+use Filament\Tables\Columns\TextColumn;
+use Filament\Forms\Components\TextInput;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
+use App\Filament\Resources\DetailPeminjamanResource\Pages;
+use App\Filament\Resources\DetailPeminjamanResource\RelationManagers;
 
 class DetailPeminjamanResource extends Resource
 {
@@ -23,7 +26,16 @@ class DetailPeminjamanResource extends Resource
     {
         return $form
             ->schema([
-                //
+                Select::make('id_peminjaman')
+                    ->relationship('peminjaman', 'id_peminjaman')
+                    ->searchable()
+                    ->preload()
+                    ->required()
+                    ->live(),
+
+                TextInput::make('jumlah_buku')
+                    ->required()
+                    ->numeric(),
             ]);
     }
 
@@ -31,7 +43,8 @@ class DetailPeminjamanResource extends Resource
     {
         return $table
             ->columns([
-                //
+                TextColumn::make('jumlah_buku')
+                    ->numeric(),
             ])
             ->filters([
                 //
