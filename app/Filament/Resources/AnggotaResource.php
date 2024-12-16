@@ -2,17 +2,21 @@
 
 namespace App\Filament\Resources;
 
-use Filament\Forms;
-use Filament\Tables;
-use App\Models\Anggota;
-use Filament\Forms\Form;
-use Filament\Tables\Table;
-use Filament\Resources\Resource;
-use Filament\Tables\Columns\TextColumn;
-use Illuminate\Database\Eloquent\Builder;
 use App\Filament\Resources\AnggotaResource\Pages;
-use Illuminate\Database\Eloquent\SoftDeletingScope;
 use App\Filament\Resources\AnggotaResource\RelationManagers;
+use App\Models\Anggota;
+use Filament\Forms;
+use Filament\Forms\Components\DatePicker;
+use Filament\Forms\Components\Fieldset;
+use Filament\Forms\Components\TextInput;
+use Filament\Forms\Form;
+use Filament\Resources\Resource;
+use Filament\Tables;
+use Filament\Tables\Columns\TextColumn;
+use Filament\Tables\Columns\TextInputColumn;
+use Filament\Tables\Table;
+use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\SoftDeletingScope;
 
 class AnggotaResource extends Resource
 {
@@ -29,19 +33,20 @@ class AnggotaResource extends Resource
                     ->maxLength(255)
                     ->required(),
 
-                Forms\Components\TextInput::make('email')
+                    Forms\Components\TextInput::make('email')
                     ->minLength(2)
                     ->maxLength(255)
                     ->required(),
 
-                Forms\Components\TextInput::make('no_telepon')
-                    ->numeric()
+                    Forms\Components\TextInput::make('no_telepon')
+                    ->prefix('+62')
+                    ->tel()
                     ->required(),
 
-                Forms\Components\TextInput::make('alamat')
+                    Forms\Components\TextInput::make('alamat')
                     ->required(),
 
-                Forms\Components\DatePicker::make('tanggal_daftar')
+                    Forms\Components\DatePicker::make('tanggal_daftar')
                     ->placeholder('MM/DD/YYYY')
                     ->required()
             ]);
@@ -52,20 +57,20 @@ class AnggotaResource extends Resource
         return $table
             ->columns([
                 TextColumn::make('nama')
-                    ->searchable(),
+                ->searchable(),
 
                 TextColumn::make('email'),
 
                 TextColumn::make('no_telepon')
-                    ->numeric(),
+                ->prefix('+62'),
 
                 TextColumn::make('alamat'),
 
                 TextColumn::make('tanggal_daftar')
-                    ->date()
+                ->date()
             ])
             ->filters([
-                //
+
             ])
             ->actions([
                 Tables\Actions\ViewAction::make(),
@@ -73,7 +78,7 @@ class AnggotaResource extends Resource
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
-                    Tables\Actions\DeleteBulkAction::make(),
+                Tables\Actions\DeleteBulkAction::make(),
                 ]),
             ]);
     }

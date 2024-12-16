@@ -2,15 +2,17 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
 
 class Buku extends Model
 {
     use HasFactory;
 
     // Nama tabel yang digunakan oleh model ini
-    protected $table = 'Buku';
+    protected $table = 'buku';
+
+    protected $primaryKey = 'id_buku';
 
     // Kolom yang dapat diisi secara massal
     protected $guarded = [
