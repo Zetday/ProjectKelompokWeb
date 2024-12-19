@@ -15,7 +15,7 @@ class Anggota extends Model
     protected $primaryKey = 'id_anggota';
 
     protected $guarded = [
-        'id'
+        'id_anggota'
     ];
 
     const CREATED_AT = 'created_at';

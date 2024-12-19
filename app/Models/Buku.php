@@ -16,7 +16,7 @@ class Buku extends Model
 
     // Kolom yang dapat diisi secara massal
     protected $guarded = [
-        'id'
+        'id_buku'
     ];
 
     // Jika Anda menggunakan timestamp untuk kolom yang berbeda
