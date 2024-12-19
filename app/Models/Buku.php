@@ -30,4 +30,9 @@ class Buku extends Model
     {
         return $this->hasMany('id_buku');
     }
+
+    public function kategori()
+    {
+        return $this->belongsTo(Buku::class, 'id_buku');
+    }
 }
