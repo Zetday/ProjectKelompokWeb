@@ -12,6 +12,7 @@ use Filament\Forms\Components\Select;
 use Filament\Tables\Actions\EditAction;
 use Filament\Tables\Actions\ViewAction;
 use Filament\Tables\Columns\TextColumn;
+use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\DatePicker;
 use Illuminate\Database\Eloquent\Builder;
 use Filament\Tables\Actions\BulkActionGroup;
@@ -62,6 +63,7 @@ class PeminjamanResource extends Resource
                     ])
                     ->native(false)
                     ->required(),
+
             ]);
     }
 
@@ -83,8 +85,9 @@ class PeminjamanResource extends Resource
 
                 TextColumn::make('status'),
 
-                TextColumn::make('no_telpon')
-                    ->numeric(),
+                TextColumn::make('anggota.no_telepon')
+                    ->prefix('0')
+                    ->label('No Telepon'),
 
             ])
             ->filters([

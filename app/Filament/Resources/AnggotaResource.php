@@ -33,20 +33,20 @@ class AnggotaResource extends Resource
                     ->maxLength(255)
                     ->required(),
 
-                    Forms\Components\TextInput::make('email')
+                Forms\Components\TextInput::make('email')
                     ->minLength(2)
                     ->maxLength(255)
                     ->required(),
 
-                    Forms\Components\TextInput::make('no_telepon')
+                Forms\Components\TextInput::make('no_telepon')
                     ->prefix('+62')
                     ->tel()
                     ->required(),
 
-                    Forms\Components\TextInput::make('alamat')
+                Forms\Components\TextInput::make('alamat')
                     ->required(),
 
-                    Forms\Components\DatePicker::make('tanggal_daftar')
+                Forms\Components\DatePicker::make('tanggal_daftar')
                     ->placeholder('MM/DD/YYYY')
                     ->required()
             ]);
@@ -57,28 +57,26 @@ class AnggotaResource extends Resource
         return $table
             ->columns([
                 TextColumn::make('nama')
-                ->searchable(),
+                    ->searchable(),
 
                 TextColumn::make('email'),
 
                 TextColumn::make('no_telepon')
-                ->prefix('+62'),
+                    ->prefix('0'),
 
                 TextColumn::make('alamat'),
 
                 TextColumn::make('tanggal_daftar')
-                ->date()
+                    ->date()
             ])
-            ->filters([
-
-            ])
+            ->filters([])
             ->actions([
                 Tables\Actions\ViewAction::make(),
                 Tables\Actions\EditAction::make(),
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
-                Tables\Actions\DeleteBulkAction::make(),
+                    Tables\Actions\DeleteBulkAction::make(),
                 ]),
             ]);
     }

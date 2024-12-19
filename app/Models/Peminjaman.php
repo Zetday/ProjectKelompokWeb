@@ -11,6 +11,8 @@ class Peminjaman extends Model
 
     protected $table = 'peminjaman';
 
+    protected $primaryKey = 'id_peminjaman';
+
     protected $guarded = [
         'id_peminjaman',
     ];
