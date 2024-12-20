@@ -43,8 +43,10 @@ class AnggotaResource extends Resource
                     ->tel()
                     ->required(),
 
-                Forms\Components\TextInput::make('alamat')
-                    ->required(),
+                Forms\Components\Textarea::make('alamat')
+                    ->rows(3)
+                    ->required()
+                    ->maxLength(255),
 
                 Forms\Components\DatePicker::make('tanggal_daftar')
                     ->placeholder('MM/DD/YYYY')
