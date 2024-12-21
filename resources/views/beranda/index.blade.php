@@ -6,8 +6,8 @@
 
         <!-- Section Title -->
         <div class="container section-title" data-aos="fade-up">
-            <h2>Team</h2>
-            <p>our Team</p>
+            <h2>Anggota</h2>
+            <p>Daftar Anggota</p>
         </div><!-- End Section Title -->
 
         <div class="container">
@@ -17,7 +17,7 @@
                 <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="400">
                     <div class="team-member">
                         <div class="member-img">
-                            <a href="" >
+                            <a href="{{ route('profil.show', $profil->NIM) }}" >
                                     <img src="{{ asset('storage/' . $profil->foto) }}" class="img-fluid" alt="">
                                 </a>
                                     <div class="social">
@@ -31,7 +31,7 @@
                                                 class="bi bi-youtube"></i></a>
                                     </div>
                                 </div>
-                                <a href="">
+                                <a href="{{ route('profil.show', $profil->NIM) }}">
                                     <div class="member-info text-center">
                                         <h4>{{ $profil->nama_mahasiswa }}</h4>
                                         <span>{{ $profil->NIM }}</span>

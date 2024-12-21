@@ -44,9 +44,6 @@ class KategoriBukuResource extends Resource
     {
         return $table
             ->columns([
-                TextColumn::make('id_kategori')
-                    ->label('ID')
-                    ->searchable(),
                 TextColumn::make('nama_kategori')
                     ->label('Kategori Buku')
                     ->searchable(),
