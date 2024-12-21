@@ -6,6 +6,7 @@ use App\Filament\Resources\BukuResource\Pages;
 use App\Filament\Resources\BukuResource\RelationManagers;
 use App\Models\Buku;
 use Filament\Forms;
+use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
@@ -25,26 +26,32 @@ class BukuResource extends Resource
     {
         return $form
             ->schema([
-                Forms\Components\TextInput::make('judul')
+                Select::make('id_kategori')
+                    ->relationship('kategori', 'nama_kategori')
+                    ->searchable()
+                    ->preload()
+                    ->required()
+                    ->live(),
+                TextInput::make('judul')
                     ->minLength(2)
                     ->maxLength(255)
                     ->required(),
 
-                    Forms\Components\TextInput::make('penulis')
+                TextInput::make('penulis')
                     ->minLength(2)
                     ->maxLength(255)
                     ->required(),
 
-                    Forms\Components\TextInput::make('penerbit')
+                TextInput::make('penerbit')
                     ->minLength(2)
                     ->maxLength(255)
                     ->required(),
 
-                    Forms\Components\TextInput::make('tahun_terbit')
+                TextInput::make('tahun_terbit')
                     ->numeric()
                     ->required(),
 
-                    Forms\Components\TextInput::make('jumlah_stok')
+                TextInput::make('jumlah_stok')
                     ->numeric()
                     ->required(),
             ]);
