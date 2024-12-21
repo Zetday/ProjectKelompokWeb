@@ -26,6 +26,8 @@ use App\Filament\Resources\KategoriBukuResource\Pages\CreateKategoriBuku;
 class KategoriBukuResource extends Resource
 {
     protected static ?string $model = KategoriBuku::class;
+    
+    protected static ?int $navigationSort = 1;
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 

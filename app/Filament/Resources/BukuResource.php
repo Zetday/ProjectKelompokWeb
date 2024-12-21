@@ -20,6 +20,8 @@ class BukuResource extends Resource
 {
     protected static ?string $model = Buku::class;
 
+    protected static ?int $navigationSort = 2;
+
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
     public static function form(Form $form): Form
@@ -60,19 +62,19 @@ class BukuResource extends Resource
     public static function table(Table $table): Table
     {
         return $table
-        ->columns([
-            TextColumn::make('judul')
-            ->searchable(),
+            ->columns([
+                TextColumn::make('judul')
+                    ->searchable(),
 
-            TextColumn::make('penulis'),
+                TextColumn::make('penulis'),
 
-            TextColumn::make('penerbit'),
+                TextColumn::make('penerbit'),
 
-            TextColumn::make('tahun_terbit'),
+                TextColumn::make('tahun_terbit'),
 
-            TextColumn::make('jumlah_stok')
-            ->numeric(),
-        ])
+                TextColumn::make('jumlah_stok')
+                    ->numeric(),
+            ])
             ->filters([
                 //
             ])
