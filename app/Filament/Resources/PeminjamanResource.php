@@ -23,9 +23,6 @@ use App\Filament\Resources\PeminjamanResource\RelationManagers;
 use App\Filament\Resources\PeminjamanResource\Pages\EditPeminjaman;
 use App\Filament\Resources\PeminjamanResource\Pages\ListPeminjamen;
 use App\Filament\Resources\PeminjamanResource\Pages\CreatePeminjaman;
-use BladeUI\Icons\Components\Icon;
-use Filament\Tables\Columns\BadgeColumn;
-use Filament\Tables\Columns\IconColumn;
 
 class PeminjamanResource extends Resource
 {

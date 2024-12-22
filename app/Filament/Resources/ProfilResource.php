@@ -65,13 +65,15 @@ class ProfilResource extends Resource
     {
         return $table
             ->columns([
-                ImageColumn::make('foto')->size(80)
-                    ->circular(),
                 
+                ImageColumn::make('foto')
+                    ->size(80)
+                    ->circular(),
+
                 TextColumn::make('NIM')
                     ->label('NIM')
                     ->searchable(),
-                
+
                 TextColumn::make('nama_mahasiswa')
                     ->searchable(),
 
