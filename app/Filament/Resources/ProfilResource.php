@@ -67,11 +67,11 @@ class ProfilResource extends Resource
             ->columns([
                 ImageColumn::make('foto')->size(80)
                     ->circular(),
-                
+
                 TextColumn::make('NIM')
                     ->label('NIM')
                     ->searchable(),
-                
+
                 TextColumn::make('nama_mahasiswa')
                     ->searchable(),
 
