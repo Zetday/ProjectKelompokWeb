@@ -21,5 +21,14 @@ class BukuSeeder extends Seeder
             'tahun_terbit' => 2005,
             'jumlah_stok' => 10,
         ]);
+
+        Buku::create([
+            'id_kategori' => 2,
+            'judul' => 'Harry Potter The Sorcered Stone',
+            'penulis' => 'J.K. Rowling',
+            'penerbit' => 'Bloomsburry',
+            'tahun_terbit' => 2015,
+            'jumlah_stok' => 5,
+        ]);
     }
 }

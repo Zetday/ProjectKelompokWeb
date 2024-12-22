@@ -12,5 +12,9 @@ class KategoriBukuSeeder extends Seeder
         KategoriBuku::create([
             'nama_kategori' => 'Sastra',
         ]);
+
+        KategoriBuku::create([
+            'nama_kategori' => 'Fiksi',
+        ]);
     }
 }
