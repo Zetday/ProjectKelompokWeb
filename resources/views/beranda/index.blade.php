@@ -6,12 +6,10 @@
 
         <!-- Section Title -->
         <div class="container section-title" data-aos="fade-up">
-            <h2>Anggota</h2>
+            <h2>Anggota Kelompok</h2>
             <p>Daftar Anggota</p>
         </div><!-- End Section Title -->
-
         <div class="container">
-
             <div class="row-12 gy-4 d-flex justify-content-evenly">
                 @foreach ($profiles as $profil)
                 <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="400">

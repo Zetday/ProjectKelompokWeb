@@ -2,26 +2,14 @@
 
 namespace App\Filament\Resources;
 
-use Filament\Forms;
 use Filament\Tables;
 use Filament\Forms\Form;
 use Filament\Tables\Table;
 use App\Models\KategoriBuku;
 use Filament\Resources\Resource;
-use Filament\Tables\Actions\EditAction;
-use Filament\Tables\Actions\ViewAction;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Forms\Components\TextInput;
-use Illuminate\Database\Eloquent\Builder;
-use Filament\Tables\Actions\BulkActionGroup;
-use Filament\Tables\Actions\DeleteBulkAction;
-use Illuminate\Database\Eloquent\SoftDeletingScope;
 use App\Filament\Resources\KategoriBukuResource\Pages;
-use App\Filament\Resources\KategoriBukuResource\RelationManagers;
-use App\Filament\Resources\KategoriBukuResource\Pages\EditKategoriBuku;
-use App\Filament\Resources\KategoriBukuResource\Pages\ViewKategoriBuku;
-use App\Filament\Resources\KategoriBukuResource\Pages\ListKategoriBukus;
-use App\Filament\Resources\KategoriBukuResource\Pages\CreateKategoriBuku;
 
 class KategoriBukuResource extends Resource
 {

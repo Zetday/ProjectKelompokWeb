@@ -20,5 +20,13 @@ class PeminjamanSeeder extends Seeder
             'tanggal_kembali' => '2024-12-25',
             'status' => 'Dipinjam',
         ]);
+
+        Peminjaman::create([
+            'id_anggota' => 2,
+            'id_buku' => 2,
+            'tanggal_pinjam' => '2024-12-20',
+            'tanggal_kembali' => '2024-12-22',
+            'status' => 'Dikembalikan',
+        ]);
     }
 }

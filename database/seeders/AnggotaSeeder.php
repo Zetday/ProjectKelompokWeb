@@ -20,5 +20,13 @@ class AnggotaSeeder extends Seeder
             'alamat' => 'JL A Yani KM 14',
             'tanggal_daftar' => '2024-12-01',
         ]);
+
+        Anggota::create([
+            'nama' => 'Asep Nurmagomedov',
+            'email' => 'asep@gmail.com',
+            'no_telepon' => 8934235135,
+            'alamat' => 'Jalan Pramuka No. 12 RT. 33 RW. 02',
+            'tanggal_daftar' => '2024-12-22',
+        ]);
     }
 }
