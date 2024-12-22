@@ -63,14 +63,20 @@ class BukuResource extends Resource
     {
         return $table
             ->columns([
+                TextColumn::make('kategori.nama_kategori')
+                    ->searchable(),
+
                 TextColumn::make('judul')
                     ->searchable(),
 
-                TextColumn::make('penulis'),
+                TextColumn::make('penulis')
+                    ->searchable(),
 
-                TextColumn::make('penerbit'),
+                TextColumn::make('penerbit')
+                    ->searchable(),
 
-                TextColumn::make('tahun_terbit'),
+                TextColumn::make('tahun_terbit')
+                    ->searchable(),
 
                 TextColumn::make('jumlah_stok')
                     ->numeric(),
@@ -81,6 +87,7 @@ class BukuResource extends Resource
             ->actions([
                 Tables\Actions\ViewAction::make(),
                 Tables\Actions\EditAction::make(),
+                Tables\Actions\DeleteAction::make(),
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([

@@ -3,8 +3,10 @@
 namespace App\Filament\Resources\ProfilResource\Pages;
 
 use App\Filament\Resources\ProfilResource;
+use App\Models\Profil;
 use Filament\Actions;
 use Filament\Resources\Pages\EditRecord;
+use Illuminate\Support\Facades\Storage;
 
 class EditProfil extends EditRecord
 {

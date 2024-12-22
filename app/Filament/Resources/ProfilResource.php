@@ -6,6 +6,7 @@ use Filament\Forms;
 use Filament\Tables;
 use App\Models\Profil;
 use Filament\Forms\Form;
+use Actions\DeleteAction;
 use Filament\Tables\Table;
 use Filament\Resources\Resource;
 use Filament\Forms\Components\Textarea;
@@ -17,6 +18,9 @@ use Illuminate\Database\Eloquent\Builder;
 use App\Filament\Resources\ProfilResource\Pages;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 use App\Filament\Resources\ProfilResource\RelationManagers;
+use Filament\Actions\DeleteAction as ActionsDeleteAction;
+use Filament\Tables\Actions\DeleteAction as TablesActionsDeleteAction;
+use Illuminate\Support\Facades\Storage;
 
 class ProfilResource extends Resource
 {
@@ -52,7 +56,8 @@ class ProfilResource extends Resource
                     ->maxLength(255),
 
                 FileUpload::make('foto')
-                    ->image(),
+                    ->image()
+                    ->required(),
             ]);
     }
 
@@ -60,8 +65,13 @@ class ProfilResource extends Resource
     {
         return $table
             ->columns([
+                
                 ImageColumn::make('foto')->size(80),
-
+                
+                TextColumn::make('NIM')
+                    ->label('NIM')
+                    ->searchable(),
+                
                 TextColumn::make('nama_mahasiswa')
                     ->searchable(),
 
@@ -75,6 +85,7 @@ class ProfilResource extends Resource
             ->actions([
                 Tables\Actions\ViewAction::make(),
                 Tables\Actions\EditAction::make(),
+                Tables\Actions\DeleteAction::make(),
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
