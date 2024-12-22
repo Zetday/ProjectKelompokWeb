@@ -2,11 +2,9 @@
 
 namespace App\Filament\Resources;
 
-use Filament\Forms;
 use Filament\Tables;
 use App\Models\Profil;
 use Filament\Forms\Form;
-use Actions\DeleteAction;
 use Filament\Tables\Table;
 use Filament\Resources\Resource;
 use Filament\Forms\Components\Textarea;
@@ -14,13 +12,7 @@ use Filament\Tables\Columns\TextColumn;
 use Filament\Forms\Components\TextInput;
 use Filament\Tables\Columns\ImageColumn;
 use Filament\Forms\Components\FileUpload;
-use Illuminate\Database\Eloquent\Builder;
 use App\Filament\Resources\ProfilResource\Pages;
-use Illuminate\Database\Eloquent\SoftDeletingScope;
-use App\Filament\Resources\ProfilResource\RelationManagers;
-use Filament\Actions\DeleteAction as ActionsDeleteAction;
-use Filament\Tables\Actions\DeleteAction as TablesActionsDeleteAction;
-use Illuminate\Support\Facades\Storage;
 
 class ProfilResource extends Resource
 {

@@ -9,20 +9,9 @@ use App\Models\Peminjaman;
 use Filament\Tables\Table;
 use Filament\Resources\Resource;
 use Filament\Forms\Components\Select;
-use Filament\Tables\Actions\EditAction;
-use Filament\Tables\Actions\ViewAction;
 use Filament\Tables\Columns\TextColumn;
-use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\DatePicker;
-use Illuminate\Database\Eloquent\Builder;
-use Filament\Tables\Actions\BulkActionGroup;
-use Filament\Tables\Actions\DeleteBulkAction;
-use Illuminate\Database\Eloquent\SoftDeletingScope;
 use App\Filament\Resources\PeminjamanResource\Pages;
-use App\Filament\Resources\PeminjamanResource\RelationManagers;
-use App\Filament\Resources\PeminjamanResource\Pages\EditPeminjaman;
-use App\Filament\Resources\PeminjamanResource\Pages\ListPeminjamen;
-use App\Filament\Resources\PeminjamanResource\Pages\CreatePeminjaman;
 
 class PeminjamanResource extends Resource
 {
