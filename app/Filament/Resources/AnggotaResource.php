@@ -63,7 +63,9 @@ class AnggotaResource extends Resource
                 TextColumn::make('nama')
                     ->searchable(),
 
-                TextColumn::make('email'),
+                TextColumn::make('email')
+                    ->icon('heroicon-m-envelope')
+                    ->iconColor('primary'),
 
                 TextColumn::make('no_telepon')
                     ->prefix('0'),
