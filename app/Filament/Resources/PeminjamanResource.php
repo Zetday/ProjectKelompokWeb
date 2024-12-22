@@ -88,18 +88,22 @@ class PeminjamanResource extends Resource
                 TextColumn::make('tanggal_kembali')
                     ->date(),
 
-                    
-                    TextColumn::make('anggota.no_telepon')
+                TextColumn::make('anggota.no_telepon')
                     ->prefix('0')
                     ->label('No Telepon'),
-                    
-                    TextColumn::make('status')
+
+                TextColumn::make('status')
                     ->badge()
-                    ->color(fn (string $state): string => match ($state) {
+                    ->icon(fn(string $state): string => match ($state) {
+                        'Dipinjam' => 'heroicon-o-clock',
+                        'Dikembalikan' => 'heroicon-o-check-circle',
+                    })
+
+                    ->color(fn(string $state): string => match ($state) {
                         'Dipinjam' => 'warning',
                         'Dikembalikan' => 'success',
-                        }),
-                    ])
+                    }),
+            ])
             ->filters([
                 //
             ])
