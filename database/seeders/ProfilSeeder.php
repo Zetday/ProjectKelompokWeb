@@ -26,7 +26,7 @@ class ProfilSeeder extends Seeder
             'nama_mahasiswa' => 'Muhammad Rendy',
             'kelas' => 'SIKC-3B',
             'deskripsi' => 'Membuat menu Kategori Buku, Membuat menu Peminjaman, Membuat menu Profil, Membuat frontend Profil, Membuat PPT, Membuat laporan',
-            'foto' => '01JFP4CS0FRRC31P6XHWKP0Z6M.png',
+            'foto' => '01JFMPMYD58AGXD7220DJ7STME.png',
         ]);
     }
 }

@@ -15,7 +15,7 @@ class BukuSeeder extends Seeder
     {
         Buku::create([
             'id_kategori' => 1,
-            'judul' => 'Sastra',
+            'judul' => 'Laskar Pelangi',
             'penulis' => 'Andrea Hirata',
             'penerbit' => 'Bentang Pustaka',
             'tahun_terbit' => 2005,

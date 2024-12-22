@@ -65,8 +65,8 @@ class ProfilResource extends Resource
     {
         return $table
             ->columns([
-                
-                ImageColumn::make('foto')->size(80),
+                ImageColumn::make('foto')->size(80)
+                    ->circular(),
                 
                 TextColumn::make('NIM')
                     ->label('NIM')
@@ -77,7 +77,8 @@ class ProfilResource extends Resource
 
                 TextColumn::make('kelas'),
 
-                TextColumn::make('deskripsi'),
+                TextColumn::make('deskripsi')
+                    ->limit(20),
             ])
             ->filters([
                 //
